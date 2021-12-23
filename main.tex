@@ -1,0 +1,59 @@
+\documentclass{article} % This command is used to set the type of document you are working on such as an article, book, or presenation
+
+\usepackage{geometry} % This package allows the editing of the page layout
+\usepackage{amsmath}  % This package allows the use of a large range of mathematical formula, commands, and symbols
+\usepackage{graphicx}  % This package allows the importing of images
+\usepackage{amssymb}
+\usepackage{latexsym,amsthm,cite}
+
+\makeatletter %% <- make @ usable in command names
+\newcommand*\Neg[2][0mu]{\Neginternal{#1}{\negslash}{#2}}
+\newcommand*\sNeg[2][0mu]{\Neginternal{#1}{\snegslash}{#2}}
+\newcommand*\ssNeg[2][0mu]{\Neginternal{#1}{\ssnegslash}{#2}}
+\newcommand*\sssNeg[2][0mu]{\Neginternal{#1}{\sssnegslash}{#2}}
+\newcommand*\Neginternal[3]{\mathpalette\Neg@{{#1}{#2}{#3}}}
+\newcommand*\Neg@[2]{\Neg@@{#1}#2}
+\newcommand*\Neg@@[4]{%
+  \mathrel{\ooalign{%
+    $\m@th#1#4$\cr
+    \hidewidth$\m@th#3{#1}\mkern\muexpr#2*2$\hidewidth\cr
+  }}%
+}
+
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\Lmap}{\mathcal{L}}
+\newcommand{\Mx}{\mathcal{M}}
+\newcommand{\Pol}{\mathcal{P}}
+\newcommand{\tr}{\mathrm{tr}}
+
+\newcommand*\negslash[1]{\m@th#1\not\mathrel{\phantom{=}}}
+\newcommand*\snegslash[1]{\rotatebox[origin=c]{60}{$\m@th#1-$}}
+\newcommand*\ssnegslash[1]{\rotatebox[origin=c]{60}{$\m@th#1{\dabar@}\mkern-7mu{\dabar@}$}}
+\newcommand*\sssnegslash[1]{\rotatebox[origin=c]{60}{$\m@th#1\dabar@$}}
+\makeatother  %% <- revert @
+
+\newcommand{\question}[2][]{\begin{flushleft}
+        \textbf{Question #1}:\\
+\end{flushleft}}
+\newcommand{\sol}{
+\textit{Solution}
+} %Use if you want a boldface solution line
+\newcommand{\maketitletwo}{\begin{center}
+        \Large{\textbf{Homological Algebra}} % Name of course here
+        \vspace{10pt}
+        
+        \normalsize{\hfill Nayeong Kim  % Your name here
+        }        % Change to due date if preferred
+	\vspace{10pt}
+\end{center}}
+
+\begin{document}
+\maketitletwo
+This is a studying note of homological algebra based on the book \textit{Homological Algebra} written by Charles A. Weibel.
+
+\section{Chain Complexes}
+\subsection{Complexes of $R$-Modules}
+
+\end{document}
